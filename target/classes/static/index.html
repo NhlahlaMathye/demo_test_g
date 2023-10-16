@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title> Nhlahla's board game</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Welcome to nhlahla's the board game</h1>
+
+    <div id="gameContainer">
+
+    <form action="/play" method="post">
+        <label for="index"> Enter pit to move stones from (1-6): </label>
+        <input type="text" id="index" name="index">
+        <input type="submit" id="moveButton" value="Move">
+    </form>
+
+    <h2>Game Progress</h2>
+        <pre th:utext="${gameProgress}"></pre>
+
+    <h2>Game Results</h2>
+        <pre th:utext="${gameResults}"></pre>
+    </div>
+
+    <button id="navigateButton">Reset Move</button>
+
+    <script>
+
+        document.getElementById("navigateButton").addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+    </script>
+
+</body>
+</html>
